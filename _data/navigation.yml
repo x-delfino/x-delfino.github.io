@@ -1,0 +1,23 @@
+# main links
+main:
+
+  - title: "CTF Writeups"
+    url: /ctf/
+    sublinks:
+      title: "test"
+      url: /test
+
+  - title: "Guides"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+
+  - title: "Articles"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+      
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/

@@ -1,0 +1,9 @@
+<figure class="{{ include.class }}">
+  <img src="{{ page.collection | append: "/" | append: page.imgdir | append: "/" | append: include.name | prepend: "/assets/post_images/" | relative_url }}"
+       alt="{% if include.alt %}{{ include.alt }}{% endif %}">
+  {%- if include.caption -%}
+    <figcaption>
+      {{ include.caption | markdownify | remove: "<p>" | remove: "</p>" }}
+    </figcaption>
+  {%- endif -%}
+</figure>
