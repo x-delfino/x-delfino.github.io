@@ -2,14 +2,15 @@
   url: /test/
 
 - title: CTF
-  url: /group/
+  prettyname: "Capture the Flag"
+  url: /ctf/
   sublinks:
-    - title: Sub-item 1
-      url: /group/si1
-    - title: Sub-item 2
-      url: /group/si2
-    - title: Sub-item 3
-      url: /group/si3
+    - title: "HackTheBox"
+      url: /ctf/htb
+    - title: "PG Play"
+      url: /ctf/pgplay
+    - title: "TryHackMe"
+      url: /ctf/tryhackme
 
 - title: Articles
   url: /group/

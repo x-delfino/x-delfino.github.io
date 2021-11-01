@@ -7,6 +7,7 @@ Copyright (c) 2015 Luke Jackson
 $(function() {
 
   var $btn = $("nav.greedy-nav .greedy-nav__toggle");
+  var $blind = $(".blind");
   var $vlinks = $("nav.greedy-nav .visible-links");
   var $hlinks = $("nav.greedy-nav .hidden-links");
   var $nav = $("nav.greedy-nav");
@@ -99,7 +100,8 @@ $(function() {
 
   $btn.on('click', function() {
     $hlinks.toggleClass('hidden');
-    $(this).toggleClass('close');
+    $blind.toggleClass('close');
+  //  $(this).toggleClass('close');
     clearTimeout(timer);
   });
 
