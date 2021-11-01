@@ -19,17 +19,13 @@
               <li class="masthead__menu-item">
                 <div class="masthead__menu-dropdown" id="{{menu_id}}">
                   <div class="masthead__menu-dropdown-header">
-                    <div class="toggle_compressed masthead__menu-dropdown-toggle fa-fw" id="{{toggle_id}}" onclick="menuHelper('{{ menu_id }}', '{{ toggle_id }}')">
+                    <div class="toggle_compressed masthead__menu-dropdown-toggle fa-fw" onclick="menuHelper('{{ menu_id }}')">
                     </div>
                     <a class="masthead__menu-dropdown-header-url"href="{{ site.baseurl }}{{ entry.url }}" style="display: inline-flex;margin-left: auto;padding-left: inherit">
                       {{ entry.title }}
                     </a>
                   </div>
-
-                 
-                  
-                
-                  <div class="masthead__menu-dropdown-content" style="display: none;">
+                  <div class="masthead__menu-dropdown-content">
                   {% for sublink in sublinks %}
                       <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
                   {% endfor %}

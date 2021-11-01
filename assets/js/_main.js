@@ -140,42 +140,36 @@ window.FontAwesomeConfig = {
 }
 
 
-
-
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function menuHelper(menuId, toggleId) {
+function menuHelper(menuId) {
   menuCollapsed = "masthead__menu-dropdown";
   menuExpanded = "masthead__menu-dropdown__expanded";
-  menu = document.getElementById(menuId);
-  toggle = document.getElementById(toggleId);
-  if (menu.classList.contains(menuCollapsed)){
-    menu.classList.replace(menuCollapsed, menuExpanded);
+  if (menuId){
+    menu = document.getElementById(menuId);
+    menuStatus = menu.classList.contains(menuCollapsed);
   }
-  else {
-    menu.classList.replace(menuExpanded, menuCollapsed);
-  } 
+  allExpanded = document.getElementsByClassName(menuExpanded);
+  
+  for (let expanded of allExpanded){
+    expanded.classList.replace(menuExpanded, menuCollapsed);
+  }
+  if (menuId && menuStatus){
+      menu.classList.toggle('test');
+
+      menu.classList.replace(menuCollapsed, menuExpanded);
+    }
+  
 }
+
+
+
+
+
+
 window.onclick = function(e) {
-  caret_right = "fa-caret-right";
-  caret_down = "fa-caret-down";
-  expanded_class = "toggle_expanded";
-  compressed_class = "toggle_compressed";
-  if (!(e.target.classList.contains('masthead__menu-dropdown-content') || e.target.classList.contains('masthead__menu-dropdown-toggle')  )) {
-    var allDropdowns = document.getElementsByClassName('masthead__menu-dropdown-content');
-    var allToggles = document.getElementsByClassName('masthead__menu-dropdown-toggle');
-    var i;
-    for (i = 0; i < allDropdowns.length; i++) {
-      if (allDropdowns[i].style.display == "block") {
-        allDropdowns[i].style.display = "none";
-      }
-    }
-    for (i = 0; i < allToggles.length; i++) {
-      if (allToggles[i].classList.contains(caret_down)) {
-        allToggles[i].classList.replace (caret_down, caret_right);
-        toggle.classList.replace (expanded_class, compressed_class);
-      }
-    }
+  if (!e.target.classList.contains("masthead__menu-dropdown-toggle")){
+  menuHelper()
   }
 }
 
