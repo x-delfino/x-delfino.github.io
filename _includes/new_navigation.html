@@ -16,11 +16,11 @@
             {% if sublinks %}
               {% assign menu_id = entry.title | prepend: 'menu_' | slugify %}
               {% assign toggle_id = entry.title | prepend: 'toggle_' | slugify %}
-              <li class="masthead__menu-item">
+              <li class="masthead__menu-item parent">
                 <div class="masthead__menu-dropdown" id="{{menu_id}}">
                   <div class="masthead__menu-dropdown-header">
 
-                    <a class="masthead__menu-dropdown-header-url"href="{{ site.baseurl }}{{ entry.url }}" style="display: inline-flex;margin-left: auto;padding-left: inherit">
+                    <a class="masthead__menu-dropdown-header-url"href="{{ site.baseurl }}{{ entry.url }}" style="display: inline-flex;margin-left: auto;padding-left: inherit;">
                       {{ entry.title }}
                     </a>
                     <div class="toggle_compressed masthead__menu-dropdown-toggle fa-fw" onclick="menuHelper('{{ menu_id }}')">

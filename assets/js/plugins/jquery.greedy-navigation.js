@@ -101,14 +101,14 @@ $(function() {
   $btn.on('click', function() {
     $hlinks.toggleClass('hidden');
     $blind.toggleClass('close');
-  //  $(this).toggleClass('close');
+ //   $(this).toggleClass('close');
     clearTimeout(timer);
   });
 
   $hlinks.on('mouseleave', function() {
     // Mouse has left, start the timer
     timer = setTimeout(function() {
-      $hlinks.addClass('hidden');
+ //     $hlinks.addClass('hidden');
     }, closingTime);
   }).on('mouseenter', function() {
     // Mouse is back, cancel the timer
