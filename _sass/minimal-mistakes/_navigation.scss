@@ -186,20 +186,8 @@
     text-decoration: none;
     -webkit-transition: none;
     transition: none;
-/*
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0em;
-      height: 4px;
-      background: $primary-color;
-      width: 100%;
-      -webkit-transition: $global-transition;
-      transition: $global-transition;
-      -webkit-transform: scaleX(0) translate3d(0, 0, 0);
-      transform: scaleX(0) translate3d(0, 0, 0); // hide
-    }*/
+
+    //dont really know?
 
     &:hover:before {
       -webkit-transform: scaleX(1);
@@ -207,7 +195,7 @@
       transform: scaleX(1); // reveal
     }
   
-
+// change font color in masthead
     &:hover {
       color: $masthead-link-color-hover;
     }
@@ -258,6 +246,7 @@
     a {
       position: relative;
 
+//visible word underline
       &:before {
         content: "";
         position: absolute;
@@ -278,7 +267,8 @@
         transform: scaleX(1); // reveal
       }
 
-      &.masthead__menu-dropdown-header-url {
+      // align drop down with toggle etc
+      &.dropdown-header-url {
         display: inline-flex;
         margin-left: auto;
         padding-left: inherit;
@@ -286,28 +276,73 @@
       }
     }
 
-    .masthead__menu-dropdown-content::before {
-      position: absolute;
-      width: 0.5em;
-      height: 0.5em;
-      border-top: 1px solid $border-color;
-      border-left: 1px solid $border-color;
-      content: "";
-      bottom: 100%;
-      left: 30%;
-      margin-bottom: -0.25em;
-      transform: rotate(45deg);
-      border-radius: 2px 1px 1px 1px;
-      background: $background-color;
-    
+    .dropdown{
+      &-toggle{
+        display: inline-flex;
+        position: unset;
       }
 
-}
+      &-content{
+        border-radius: 0 0 $border-radius $border-radius;
+        &:before {
+          position: absolute;
+          width: 0.5em;
+          height: 0.5em;
+          border-top: 1px solid $border-color;
+          border-left: 1px solid $border-color;
+          content: "";
+          bottom: 100%;
+          left: 30%;
+          margin-bottom: -0.25em;
+          transform: rotate(45deg);
+          border-radius: 2px 1px 1px 1px;
+          background: $masthead-background-color;
+          }
+  
+      }
+      &-item{
+        border-bottom: 1px solid $border-color;
+        margin-left: 0;
+        padding-right: 0.5em;
+        border-left: 1em solid $masthead-background-color;
+        position: relative;
+        -webkit-transition: border-bottom 0.2s ease-in;
+        -moz-transition: border-bottom 0.2s ease-in;
+        -o-transition: border-bottom 0.2s ease-in;
+        transition: border-bottom 0.2s linear;
+  
+        // align for menu and remove underglow
+        a{
+          margin: 0px;
+          font-size: $type-size-5;
+          &:before{
+              content: none;
+          }
+        }
+  
+      //no left border for last child
+        &:last-child {
+          border-bottom: 1px solid $border-color;
+          border-left: 0em ;
+          padding-left: 1em;
+          border-radius: 0% 0% 2% 2%;
+        }
+        
+        &:hover{
+          border-bottom: 1px solid $primary-color;
+        }
+        &:last-child:hover{
+          border-bottom: 1px solid $primary-color;
+        }
+      }
+    }
+
+  }
 
   .hidden-links {
     position: absolute;
-    min-width: 15em;
-    top: 125%;
+    min-width: 12em;
+    top: calc(100% + 0.5em);
     right: 0;
    /* margin-top: 15px; */
     padding: 0px;
@@ -319,71 +354,91 @@
       0 2px 10px 0 rgba(#000, 0.12);
     box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
 
-    .masthead__menu-dropdown-header{
-      @include clearfix;
-      margin-left: 0;
-      padding-left: 0.6em;
-      position: relative;
-      border-bottom: 1px solid $border-color;
-      -webkit-transition: border-bottom 0.2s ease-in;
-      -moz-transition: border-bottom 0.2s ease-in;
-      -o-transition: border-bottom 0.2s ease-in;
-      transition: border-bottom 0.2s linear;
 
-      &:hover {
-        border-bottom-color: $primary-color;
+    .dropdown{
+      &-header{
+        @include clearfix;
+        margin-left: 0;
+        padding-left: 0.6em;
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        -webkit-transition: border-bottom 0.2s ease-in;
+        -moz-transition: border-bottom 0.2s ease-in;
+        -o-transition: border-bottom 0.2s ease-in;
+        transition: border-bottom 0.2s linear;
+
+        &:hover {
+          border-bottom-color: $primary-color;
+        }
+      //position parent url 
+
+        &-url {
+          float:left; 
+          width: 75% ;
+          margin-left: auto;
+          padding-left: inherit; 
+          padding-right: 0
+        }
+      }
+
+      // submenu positioning +( border color and change on hover)
+      &-item{
+        border-bottom: 1px solid $border-color;
+        margin-left: 0;
+        border-left: 3em solid $background-color;
+        position: relative;
+        -webkit-transition: border-bottom 0.2s ease-in;
+        -moz-transition: border-bottom 0.2s ease-in;
+        -o-transition: border-bottom 0.2s ease-in;
+        transition: border-bottom 0.2s linear;
   
+      //slightly smaller left border for last child
+        &:last-child {
+          border-bottom: 1px solid $border-color;
+          border-left: 2em solid $background-color;
+          padding-left: 1em;
+        }
+        
+        &:hover{
+          border-bottom: 1px solid $primary-color;
+        }
+        &:last-child:hover{
+          border-bottom: 1px solid $primary-color;
+        }
       }
-      /*
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 2px;
-        background: $primary-color;
-        width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
-        -webkit-transform: scaleX(0) translate3d(0, 0, 0);
-        transform: scaleX(0) translate3d(0, 0, 0); // hide
+
+      //position dropdown content and set font size
+      &-content{
+        position: inherit;
+        border: none;
+        border-radius: unset;
+        margin-left: inherit;
+        background-color: $background-color;
+        a {
+          font-size: $type-size-5;
+        }
       }
-  
-      &:hover:before {
-        -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-        transform: scaleX(1); // reveal
+
+      //position dropdown toggle
+      &-toggle{
+        @include clearfix;
+
+     //   float: right;
+        padding-top: 0.6em;
+        position: relative;
       }
-*/
     }
 
+    // if it has children, dont give it a bottom border
     .parent{
       border-bottom:none;
     }
-/*
-    .masthead__menu-dropdown-header{
-      @include clearfix;
 
-      margin-left: 0;
-      padding-left: 0.6em;
-      position: relative;
-      border-bottom: 5px solid blue;
-      -webkit-transition : border 500ms ease-out;
-      -moz-transition : border 500ms ease-out;
-      -o-transition : border 500ms ease-out;
-      transition : border 500ms ease-out;
-      
-  
-      &:hover {
-        border: 5px solid red;
-      }
-    }
-  */
-
-
+    // colored bottom border hover animation for normal menu item
     .masthead__menu-item{
       position: relative;
       border-bottom: 1px solid $border-color;
+      border-left: 1em solid $masthead-background-color;
       -webkit-transition: border-bottom 0.2s ease-in;
       -moz-transition: border-bottom 0.2s ease-in;
       -o-transition: border-bottom 0.2s ease-in;
@@ -393,51 +448,21 @@
         border-bottom-color: $primary-color;
       }
 
+      //remove those settings if it has childen (should clean this)
       &.parent{
-        border-bottom:none
+        border-bottom:none;
+        border-left:none;
       }
     }
 
-    .masthead__menu-dropdown-item{
-      position: relative;
-      -webkit-transition: border-bottom 0.2s ease-in;
-      -moz-transition: border-bottom 0.2s ease-in;
-      -o-transition: border-bottom 0.2s ease-in;
-      transition: border-bottom 0.2s linear;
-
-  /*    &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 2px;
-        background: $primary-color;
-        width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
-        -webkit-transform: scaleX(0) translate3d(0, 0, 0);
-        transform: scaleX(0) translate3d(0, 0, 0); // hide
-      }
-  
-      &:hover:before {
-        -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-        transform: scaleX(1); // reveal
-      }*/
-      &:hover{
-        border-bottom: 1px solid $primary-color;
-      }
-      &:last-child:hover{
-        border-bottom: 1px solid $primary-color;
-      }
-    
-    }
-
+    // hide the hidden
     &.hidden {
       display: none;
     }
 
+    // link word positioning and color
     a {
+       // color all links on hover
       position: relative;
       margin: 0;
       padding: 10px 20px;
@@ -447,51 +472,13 @@
         color: $masthead-link-color-hover;
        // background: $navicon-link-color-hover;
       }
-
-
-      &.masthead__menu-dropdown-header-url {
-        float:left; 
-        width: 85% ;
-        margin-left: auto;
-        padding-left: inherit; 
-        padding-right: 0
-      }
     }
 
 
-    .masthead__menu-dropdown-content{
-      position: inherit;
-      border: none;
-//      border-top: 1px solid $border-color;
-      box-shadow: inset 0px 10px 5px -7px mix(black, transparent, 20), inset 0px -10px 5px -7px mix(black, transparent, 20);
-      border-radius: unset;
-      margin-left: inherit;
-
-      a {
-        font-size: $type-size-5;
-      }
-    }
-
-    .masthead__menu-dropdown-toggle{
-      float: right;
-      padding-top: 0.6em;
-    }
-
+    //add box accent in corner (speech bubble style)
     &:before {
       content: "";
       position: absolute;
-  /*    top: -11px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      background-color: $masthead-background-color;
-      border-color: $border-color transparent;
-      display: block;
-           z-index: 0; 
-
-      */
- 
       width: 0.6em;
       height: 0.6em;
       border-width: 1px 0px 0px 1px;
@@ -506,31 +493,27 @@
     
     }
 
-
-
+    //set default item bottom border and curve last item border
     li {
       display: block;
       border-bottom: 1px solid $border-color;
 
       &:last-child {
-        border-radius: 0px 0px $border-radius $border-radius;
+        border-left: none;
+        padding-left: 1em;
+      }
+      &.masthead__menu-item{
+        &:last-child {
+          border-radius: 0px 0px $border-radius $border-radius;
+        }
       }
     }
 
-    .masthead__menu-dropdown-item{
-      border-bottom: 1px solid $border-color;
-      margin-left: 0;
-      border-left: 2em solid $background-color;
-      border-right: 2em solid $background-color;
-    
-      &:last-child {
-        border-bottom: 1px solid $border-color;
-      }
-    
-    }
+
   }
 }
 
+// what to do with no js
 .no-js {
   .greedy-nav {
     .visible-links {
@@ -546,50 +529,58 @@
      ========================================================================== */
 
 
-.masthead__menu-dropdown {
+
+.dropdown {
   overflow: hidden;
 
-  &__expanded {
+
+  &.dd_expanded {
     overflow: hidden;
-    .masthead__menu-dropdown-toggle{
-      color: $primary-color;
-    }
 
-
-    .masthead__menu-dropdown-content {
-      display: block;
-      top: 125%;
-      i {
-        display: inline-flex;
-        width: 1em;
+    .dropdown{
+    //  color the toggle when the menu is expanded
+      &-toggle{
+        color: $primary-color;
+        &::before{
+          content: "\f0d7";
+        }
+      //  transform: rotate(-90deg);
       }
 
-      
+    //  set the dropdown content 
+      &-content {
+        display: block;
+        //align with masthead
+        top: calc(100% + 0.5em);
+
+      }
     }
   }
+
+
+
+
+  //add and position toggle icon
   &-toggle {
-    display: inline-flex;
+    display:inline-block;
+
+    &:before {
+      float: right;
+      content: "\f0d9";
+      font-family: "Font Awesome 5 Free";
+      font-weight:900;
+    }
   }
 
-  &-toggle:before {
-    content: "\f0d7";
-    font-family: "Font Awesome 5 Free";
-    font-weight:900;
-  }
 
-  i {
-    display: inline-flex;
-    width: 0.6em;
-  }
-
+  //set drop down content positioning and background color
   &-content {
     display: none;
     position: absolute;
-    background-color: $background-color;
+    background-color: $masthead-background-color;
     border: 1px solid $border-color;
-    border-radius: 0% 0% 2% 2%;
+    border-bottom: none;
     min-width: 160px;
- //   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     a {
       float: none;
@@ -599,10 +590,12 @@
   }
 
 
-
+  // set header border (can probably move some of this to just the hidden
   &-header {
     margin: inherit;
     margin-left: 1em;
+    border-left: 1em solid $masthead-background-color;
+    position: relative;
     &-url {
       display: inline-flex;
       margin-left: auto;
@@ -616,12 +609,7 @@
 }
 
 
-
-
-
-
-
-
+// configure a blind with large menu
 .blind {
   &:before {
     @supports (pointer-events: none){

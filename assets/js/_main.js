@@ -140,36 +140,40 @@ window.FontAwesomeConfig = {
 }
 
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+// menu helper function
+
 function menuHelper(menuId) {
-  menuCollapsed = "masthead__menu-dropdown";
-  menuExpanded = "masthead__menu-dropdown__expanded";
-  if (menuId){
-    menu = document.getElementById(menuId);
-    menuStatus = menu.classList.contains(menuCollapsed);
-  }
-  allExpanded = document.getElementsByClassName(menuExpanded);
-  
-  for (let expanded of allExpanded){
-    expanded.classList.replace(menuExpanded, menuCollapsed);
-  }
-  if (menuId && menuStatus){
-      menu.classList.toggle('test');
 
-      menu.classList.replace(menuCollapsed, menuExpanded);
+  var $hlinks = $("nav.greedy-nav .hidden-links");
+  var $allMenus = $(`.dropdown`)
+  var expanded = "dd_expanded";
+  var $blind = $(".blind");
+  if(menuId == 'toggle'){
+    $allMenus.removeClass(expanded)
+  }
+  else if(menuId){
+    var $otherMenus = $(`.dropdown[id!=${menuId}]`);
+    var $targetMenu = $(`#${menuId}`)
+    $(`#${menuId}`).toggleClass(expanded);
+
+    if ($targetMenu.closest('.visible-links')[0]){
+      $otherMenus.removeClass(expanded);
+      $blind.removeClass('close');
+      $hlinks.addClass('hidden');
     }
-  
-}
-
-
-
-
-
-
-window.onclick = function(e) {
-  if (!e.target.classList.contains("masthead__menu-dropdown-toggle")){
-  menuHelper()
+  }
+  else{
+      $blind.removeClass('close');
+      $hlinks.addClass('hidden');
+      $allMenus.removeClass(expanded)
   }
 }
+
+
+$(window).click(function(e){
+  
+ if (!(e.target.closest('.hidden-links, .dropdown, .greedy-nav__toggle, .search__toggle'))){
+    menuHelper();
+}
+})
 

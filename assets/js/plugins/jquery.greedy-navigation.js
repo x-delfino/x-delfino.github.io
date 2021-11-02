@@ -101,6 +101,7 @@ $(function() {
   $btn.on('click', function() {
     $hlinks.toggleClass('hidden');
     $blind.toggleClass('close');
+    menuHelper('toggle')
  //   $(this).toggleClass('close');
     clearTimeout(timer);
   });

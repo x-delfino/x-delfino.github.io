@@ -17,18 +17,18 @@
               {% assign menu_id = entry.title | prepend: 'menu_' | slugify %}
               {% assign toggle_id = entry.title | prepend: 'toggle_' | slugify %}
               <li class="masthead__menu-item parent">
-                <div class="masthead__menu-dropdown" id="{{menu_id}}">
-                  <div class="masthead__menu-dropdown-header">
+                <div class="dropdown" id="{{menu_id}}">
+                  <div class="dropdown-header">
 
-                    <a class="masthead__menu-dropdown-header-url"href="{{ site.baseurl }}{{ entry.url }}" style="display: inline-flex;margin-left: auto;padding-left: inherit;">
+                    <a class="dropdown-header-url"href="{{ site.baseurl }}{{ entry.url }}">
                       {{ entry.title }}
                     </a>
-                    <div class="toggle_compressed masthead__menu-dropdown-toggle fa-fw" onclick="menuHelper('{{ menu_id }}')">
+                    <div class="toggle_compressed dropdown-toggle fa-fw" onclick="menuHelper('{{ menu_id }}')">
                     </div>
                   </div>
-                  <ul class="masthead__menu-dropdown-content">
+                  <ul class="dropdown-content">
                   {% for sublink in sublinks %}
-                    <li class="masthead__menu-dropdown-item">
+                    <li class="dropdown-item">
                       <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
                     </li>
                   {% endfor %}
