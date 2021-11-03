@@ -142,34 +142,38 @@ window.FontAwesomeConfig = {
 
 // menu helper function
 
-function menuHelper(menuId) {
-  console.log('running')
-  console.log(menuId)
-  var $hlinks = $("nav.greedy-nav .hidden-links");
-  var $allMenus = $(`.dropdown`)
-  var expanded = "dd_expanded";
-  var $blind = $(".blind");
-  if(menuId == 'toggle'){
-    $allMenus.removeClass(expanded)
-  }
-  else if(menuId){
-    var $otherMenus = $(`.dropdown[id!=${menuId}]`);
-    var $targetMenu = $(`#${menuId}`)
-    $(`#${menuId}`).toggleClass(expanded);
+function menuHelper(menuId, meth) {
+  if(!(meth == 'hover' && $(`#${menuId}`).closest('.hidden-links')[0])){
+    var $hlinks = $("nav.greedy-nav .hidden-links");
+    var $allMenus = $(`.dropdown`)
+    var expanded = "dd_expanded";
+    var $blind = $(".blind");
+    var $btn = $("nav.greedy-nav .greedy-nav__toggle");
 
-    if ($targetMenu.closest('.visible-links')[0]){
-      $otherMenus.removeClass(expanded);
-      $blind.removeClass('close');
-      $hlinks.addClass('hidden');
+    if(menuId == 'toggle'){
+      $allMenus.removeClass(expanded)
+    }
+    else if(menuId){
+      var $otherMenus = $(`.dropdown[id!=${menuId}]`);
+      var $targetMenu = $(`#${menuId}`)
+      $(`#${menuId}`).toggleClass(expanded);
+  
+      if ($targetMenu.closest('.visible-links')[0]){
+        $otherMenus.removeClass(expanded);
+        $blind.removeClass('close');
+        $hlinks.addClass('hidden');
+        $btn.removeClass('close')
+      }
+    }
+    else{
+        $blind.removeClass('close');
+        $hlinks.addClass('hidden');
+        $allMenus.removeClass(expanded)
+        $btn.removeClass('close')
+
     }
   }
-  else{
-      $blind.removeClass('close');
-      $hlinks.addClass('hidden');
-      $allMenus.removeClass(expanded)
-  }
 }
-
 
 $(window).click(function(e){
   

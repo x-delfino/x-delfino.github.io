@@ -142,8 +142,12 @@ a {
 
 /* buttons */
 
-button:focus {
+button:focus-visible {
   @extend %tab-focus;
+  -webkit-animation: none;
+  -o-animation: none;
+  -moz-animation: none;
+  animation: none;
 }
 
 /* code */
