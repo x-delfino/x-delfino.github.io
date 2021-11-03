@@ -6,11 +6,14 @@
   url: /ctf/
   sublinks:
     - title: "HackTheBox"
-      url: /ctf/htb
+      prettyname: "Hack the Box"
+      url: /ctf/htb/
     - title: "PG Play"
-      url: /ctf/pgplay
+      prettyname: "Proving Grounds"
+      url: /ctf/pgplay/
     - title: "TryHackMe"
-      url: /ctf/tryhackme
+      prettyname: "Try Hack Me"
+      url: /ctf/tryhackme/
 
 - title: Articles
   url: /group/
