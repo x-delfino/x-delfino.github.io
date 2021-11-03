@@ -2,6 +2,8 @@
   {% include tag-list.html %}
 {% endif %}
 
-{% if site.category_archive.type and page.categories[0] %}
-  {% include category-list.html %}
+{% if page.meta.showcategory %}
+  {% if site.category_archive.type and page.categories[0] %}
+    {% include category-list.html %}
+  {% endif %}
 {% endif %}

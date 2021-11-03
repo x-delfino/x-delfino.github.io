@@ -317,3 +317,26 @@ defaults:
         overlay_image: main.png
         teaser: teaser.png
         show_overlay_excerpt: false
+      ctf_meta:
+        maxrating: 5
+
+
+  - scope:
+      path: "_ctf/htb"
+    values:
+      category: "htb"
+
+  - scope:
+      path: "_ctf/pgp"
+    values:
+      category: "pgp"
+
+  - scope:
+      path: "_ctf/thm"
+    values:
+      category: "thm"
+
+  - scope:
+      path: "_ctf/other"
+    values:
+      category: "other"

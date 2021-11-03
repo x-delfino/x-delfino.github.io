@@ -17,10 +17,10 @@
               {% assign menu_id = entry.title | prepend: 'menu_' | slugify %}
               {% assign toggle_id = entry.title | prepend: 'toggle_' | slugify %}
               <li class="masthead__menu-item parent">
-                <div class="dropdown" id="{{menu_id}}">
-                  <div class="dropdown-header">
+                <div class="dropdown" id="{{menu_id}}" onmouseenter="menuHelper('on')" onmouseleave="menuHelper('off')">
+                  <div class="dropdown-header" >
 
-                    <a class="dropdown-header-url"href="{{ site.baseurl }}{{ entry.url }}">
+                    <a class="dropdown-header-url" href="{{ site.baseurl }}{{ entry.url }}">
                       {{ entry.title }}
                     </a>
                     <div class="toggle_compressed dropdown-toggle fa-fw" onclick="menuHelper('{{ menu_id }}')">

@@ -143,7 +143,8 @@ window.FontAwesomeConfig = {
 // menu helper function
 
 function menuHelper(menuId) {
-
+  console.log('running')
+  console.log(menuId)
   var $hlinks = $("nav.greedy-nav .hidden-links");
   var $allMenus = $(`.dropdown`)
   var expanded = "dd_expanded";

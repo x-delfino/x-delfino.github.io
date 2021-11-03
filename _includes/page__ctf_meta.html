@@ -1,3 +1,15 @@
-<p class="page__ctf_meta"><strong><i class="fas fa-fw fa-network-wired" aria-hidden="true"></i> Platform: </strong><a href={{ page.ctf_meta.url }}>{{ page.ctf_meta.platform }}</a></p>
-<p class="page__ctf_meta"><strong><i class="fas fa-fw fa-palette" aria-hidden="true"></i> Creator: </strong><a href={{ page.ctf_meta.designer_url }}>{{ page.ctf_meta.designer }}</a></p>
 
+<p class="page__ctf_platform"><strong><i class="fas fa-fw fa-network-wired"></i> Platform: </strong><a href={{ page.ctf_meta.url }}>{{ page.ctf_meta.platform }}</a></p>
+<p class="page__ctf_creator"><strong><i class="fas fa-fw fa-palette"></i> Creator: </strong><a href={{ page.ctf_meta.designer_url }}>{{ page.ctf_meta.designer }}</a></p>
+
+{% assign star-off = page.ctf_meta.maxrating | minus: page.ctf_meta.rating%}
+
+<div class="page__ctf_star">
+<p class="page__ctf_star-title"><strong><i class="fas fa-fw fa-tachometer-alt"></i> Difficulty: </strong></p>
+    {% for i in (1..page.ctf_meta.rating) %}
+      <div class="page__ctf_star-on fa-fw fas"></div>
+    {% endfor %}
+    {% for i in (1..star-off) %}
+      <div class="page__ctf_star-off fa-fw far"></div>
+    {% endfor %}
+</div> 
