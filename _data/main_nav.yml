@@ -8,12 +8,18 @@
     - title: "HackTheBox"
       prettyname: "Hack the Box"
       url: /ctf/htb/
+
     - title: "PG Play"
       prettyname: "Proving Grounds"
-      url: /ctf/pgplay/
+      url: /ctf/pgp/
+
     - title: "TryHackMe"
       prettyname: "Try Hack Me"
-      url: /ctf/tryhackme/
+      url: /ctf/thm/
+      
+    - title: "Other"
+      prettyname: "Other"
+      url: /ctf/other/
 
 - title: Articles
   url: /group/

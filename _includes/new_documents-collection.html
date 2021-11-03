@@ -1,0 +1,19 @@
+{% assign entries = site[include.collection] %}
+
+{% if include.sort_by %}
+  {% assign entries = entries | sort: include.sort_by %}
+{% endif %}
+
+{% if include.sort_order == 'reverse' %}
+  {% assign entries = entries | reverse %}
+{% endif %}
+
+
+
+{%- for post in entries -%}
+  {% if post.categories contains include.taxonomy %}
+    {%- unless post.hidden -%}
+      {% include ftb_archive-single.html %}
+    {%- endunless -%}
+  {% endif %}
+{%- endfor -%}

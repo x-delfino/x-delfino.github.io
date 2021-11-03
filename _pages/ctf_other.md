@@ -1,8 +1,8 @@
 ---
-title: HackTheBox
+title: Other
 layout: new_coll-category
-permalink: /ctf/htb/
+permalink: /ctf/other/
 collection: ctf
-taxonomy: htb
+taxonomy: other
 entries_layout: grid
 ---

@@ -1,8 +1,8 @@
 ---
-title: HackTheBox
+title: Proving Grounds Play
 layout: new_coll-category
-permalink: /ctf/htb/
+permalink: /ctf/pgp/
 collection: ctf
-taxonomy: htb
+taxonomy: pgp
 entries_layout: grid
 ---

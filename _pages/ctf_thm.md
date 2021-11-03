@@ -1,8 +1,8 @@
 ---
-title: HackTheBox
+title: TryHackMe
 layout: new_coll-category
-permalink: /ctf/htb/
+permalink: /ctf/thm/
 collection: ctf
-taxonomy: htb
+taxonomy: thm
 entries_layout: grid
 ---
