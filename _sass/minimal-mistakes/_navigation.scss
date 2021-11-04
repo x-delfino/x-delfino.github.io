@@ -180,8 +180,10 @@
   background: inherit;
 
   a {
-    display: block;
-    margin: 0 1rem;
+  //  display: block;
+ //   margin: 0 1rem;
+    display: inline-block;
+    margin-left: 1rem;
     color: $masthead-link-color;
     text-decoration: none;
     -webkit-transition: none;
@@ -206,7 +208,7 @@
     }
 
     &.site-title {
-      margin-left: 0;
+    //  margin-left: 0;
     }
   }
 
@@ -217,6 +219,8 @@
 
   &__toggle {
     -ms-flex-item-align: center;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
     align-self: center;
     height: $nav-toggle-height;
     border: 0;
@@ -235,12 +239,37 @@
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    overflow: hidden;
+  //  overflow: hidden;
+
+
+    .menusep{
+      display: inline-block;
+      &::before{
+        content: "";
+        //position: relative;
+        //left: 0;
+        width: 2px;
+        height: 1.25rem;
+        background: mix($primary-color,transparent, 40);
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        display: inline-block;
+        vertical-align: middle;
+    
+      }
+    }
 
     li {
       -webkit-box-flex: 0;
       -ms-flex: none;
       flex: none;
+      //hide the last seperator 
+      &:last-child{
+        .menusep::before {
+          background: transparent;
+        }
+      
+      }
     }
 
     a {
@@ -278,12 +307,33 @@
 
     .dropdown{
       &-toggle{
-        display: inline-flex;
+        display: inline-block;
         position: unset;
+        
+        @media(hover: hover){
+          color: $text-color;
+          &:before {
+            content: "\f111";
+            font-family: "Font Awesome 5 Free";
+            font-weight:400;
+            font-size:x-small;
+            position: relative;
+            vertical-align: middle;
+            -moz-animation: color 3s;
+            -o-animation: color 3s;
+            -webkit-animation: color 3s;
+            animation: color 3s;
+         }
+        }
+        @media(hover:none){
+          &:before{
+            font-size: unset;
+          }
+        }
       }
-
       &-content{
         border-radius: 0 0 $border-radius $border-radius;
+        /*
         &:before {
           position: absolute;
           width: 0.5em;
@@ -298,7 +348,7 @@
           border-radius: 2px 1px 1px 1px;
           background: $masthead-background-color;
           }
-  
+        */
       }
       &-item{
         border-bottom: 1px solid $border-color;
@@ -309,12 +359,12 @@
         -webkit-transition: border-bottom 0.2s ease-in;
         -moz-transition: border-bottom 0.2s ease-in;
         -o-transition: border-bottom 0.2s ease-in;
-        transition: border-bottom 0.2s linear;
+        transition: border-bottom 0.2s ease-in;
   
         // align for menu and remove underglow
         a{
           margin: 0px;
-          font-size: $type-size-5;
+          font-size: $type-size-6;
           &:before{
               content: none;
           }
@@ -327,12 +377,28 @@
           padding-left: 1em;
           border-radius: 0% 0% 2% 2%;
         }
-        
-        &:hover{
-          border-bottom: 1px solid $primary-color;
+        @media(hover: hover){
+          &:hover{
+            border-bottom: 1px solid $primary-color;
+          }
+          &:last-child:hover{
+            border-bottom: 1px solid $primary-color;
+          }
         }
-        &:last-child:hover{
-          border-bottom: 1px solid $primary-color;
+      }
+      &.dd_expanded{
+        .dropdown-toggle{
+          @media(hover: hover){
+            color: $primary-color;
+            &:before {
+              content: "\f111";
+              font-family: "Font Awesome 5 Free";
+              font-weight:900;
+              font-size:x-small;
+              position: relative;
+              vertical-align: middle;
+            }
+          }
         }
       }
     }
@@ -341,9 +407,9 @@
 
   .hidden-links {
     position: absolute;
-    min-width: 12em;
+    right: -0.5em;
+ //   min-width: 12em;
     top: calc(100% + 0.5em);
-    right: 0;
    /* margin-top: 15px; */
     padding: 0px;
     border: 1px solid $border-color;
@@ -358,26 +424,28 @@
     .dropdown{
       &-header{
         @include clearfix;
+        display: flex;
+        align-items: center;
         margin-left: 0;
-        padding-left: 0.6em;
         position: relative;
         border-bottom: 1px solid $border-color;
         -webkit-transition: border-bottom 0.2s ease-in;
         -moz-transition: border-bottom 0.2s ease-in;
         -o-transition: border-bottom 0.2s ease-in;
-        transition: border-bottom 0.2s linear;
+        transition: border-bottom 0.2s ease-in;
 
-        &:hover {
-          border-bottom-color: $primary-color;
+        @media(hover: hover){
+          &:hover {
+            border-bottom-color: $primary-color;
+          }
         }
       //position parent url 
 
         &-url {
-          float:left; 
-          width: 75% ;
-          margin-left: auto;
           padding-left: inherit; 
-          padding-right: 0
+          padding-right: 0;
+          display:inline-block;
+
         }
       }
 
@@ -390,7 +458,7 @@
         -webkit-transition: border-bottom 0.2s ease-in;
         -moz-transition: border-bottom 0.2s ease-in;
         -o-transition: border-bottom 0.2s ease-in;
-        transition: border-bottom 0.2s linear;
+        transition: border-bottom 0.2s ease-in;
   
       //slightly smaller left border for last child
         &:last-child {
@@ -398,12 +466,13 @@
           border-left: 2em solid $background-color;
           padding-left: 1em;
         }
-        
-        &:hover{
-          border-bottom: 1px solid $primary-color;
-        }
-        &:last-child:hover{
-          border-bottom: 1px solid $primary-color;
+        @media(hover: hover){
+          &:hover{
+            border-bottom: 1px solid $primary-color;
+          }
+          &:last-child:hover{
+            border-bottom: 1px solid $primary-color;
+          }
         }
       }
 
@@ -422,10 +491,15 @@
       //position dropdown toggle
       &-toggle{
         @include clearfix;
-
-     //   float: right;
-        padding-top: 0.6em;
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
         position: relative;
+        vertical-align: middle;
+        padding-right: 1em;
+        &::before{
+          padding-left: 1em;
+        }
       }
     }
 
@@ -442,7 +516,7 @@
       -webkit-transition: border-bottom 0.2s ease-in;
       -moz-transition: border-bottom 0.2s ease-in;
       -o-transition: border-bottom 0.2s ease-in;
-      transition: border-bottom 0.2s linear;
+      transition: border-bottom 0.2s ease-in;
   
       &:hover {
         border-bottom-color: $primary-color;
@@ -465,8 +539,9 @@
        // color all links on hover
       position: relative;
       margin: 0;
-      padding: 10px 20px;
+    //  padding: 10px 20px;
       font-size: $type-size-5;
+      padding: 0.5em 0;
 
       &:hover {
         color: $masthead-link-color-hover;
@@ -474,7 +549,7 @@
       }
     }
 
-
+/*
     //add box accent in corner (speech bubble style)
     &:before {
       content: "";
@@ -492,6 +567,7 @@
       background: $masthead-background-color;
     
     }
+*/
 
     //set default item bottom border and curve last item border
     li {
@@ -531,19 +607,35 @@
 
 
 .dropdown {
-  overflow: hidden;
-
+  height: 100%;
+  position: relative;
 
   &.dd_expanded {
-    overflow: hidden;
 
     .dropdown{
     //  color the toggle when the menu is expanded
       &-toggle{
-        color: $primary-color;
-        &::before{
-          content: "\f0d7";
+        /*
+        @media(hover: hover){
+          color: $primary-color;
+          &:before {
+            content: "\f111";
+            font-family: "Font Awesome 5 Free";
+            font-weight:900;
+          }
         }
+        @media(hover: none){*/
+          color: $primary-color;
+          &:before {
+            content: "\f150";   
+            font-family: "Font Awesome 5 Free";
+            font-weight:900;
+            -moz-animation: color 0.3s;
+            -o-animation: color 0.3s;
+            -webkit-animation: color 0.3s;
+            animation: color 3s;       
+          }
+        //}
       //  transform: rotate(-90deg);
       }
 
@@ -551,7 +643,9 @@
       &-content {
         display: block;
         //align with masthead
-        top: calc(100% + 0.5em);
+        top: 100%;
+        width: 100%;
+     //   top: calc(100% + 0.5em);
 
       }
     }
@@ -563,12 +657,17 @@
   //add and position toggle icon
   &-toggle {
     display:inline-block;
-
     &:before {
-      float: right;
-      content: "\f0d9";
+      content: "\f150";
       font-family: "Font Awesome 5 Free";
-      font-weight:900;
+      font-weight:400;
+      font-size:small;
+      position: relative;
+      vertical-align: middle;
+      -moz-animation: color 0.3s;
+      -o-animation: color 0.3s;
+      -webkit-animation: color 0.3s;
+      animation: color 0.3s;
     }
   }
 
@@ -593,7 +692,7 @@
   // set header border (can probably move some of this to just the hidden
   &-header {
     margin: inherit;
-    margin-left: 1em;
+//    margin-left: 1em;
     border-left: 1em solid $masthead-background-color;
     position: relative;
     &-url {
@@ -606,6 +705,11 @@
 
 
 
+}
+
+
+.dropdown-content-wrapper{
+  @include clearfix;
 }
 
 

@@ -176,8 +176,7 @@ function menuHelper(menuId, meth) {
 }
 
 $(window).click(function(e){
-  
- if (!(e.target.closest('.hidden-links, .dropdown, .greedy-nav__toggle, .search__toggle'))){
+ if (!(e.target.closest('.hidden-links, .dropdown, .greedy-nav__toggle'))){
     menuHelper();
 }
 })

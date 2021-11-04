@@ -19,37 +19,39 @@
               <li class="masthead__menu-item parent" onmouseenter="menuHelper('{{menu_id}}','hover')" onmouseleave="menuHelper('{{menu_id}}','hover')">
                 <div class="dropdown" id="{{menu_id}}">
                   <div class="dropdown-header" >
-
                     <a class="dropdown-header-url" href="{{ site.baseurl }}{{ entry.url }}">
                       {{ entry.title }}
                     </a>
-                    <div class="toggle_compressed dropdown-toggle fa-fw" onclick="menuHelper('{{ menu_id }}')">
+                    <div class="toggle_compressed dropdown-toggle" onclick="menuHelper('{{ menu_id }}')">
                     </div>
+                    <span class="menusep"></span>
                   </div>
-                  <ul class="dropdown-content" style="top:100%">
-                  {% for sublink in sublinks %}
-                    <li class="dropdown-item">
-                      <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
-                    </li>
-                  {% endfor %}
-                  </ul>
-
+                  <div class="dropdown-content-wrapper">
+                    <ul class="dropdown-content" style="top:100%">
+                    {% for sublink in sublinks %}
+                      <li class="dropdown-item">
+                        <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                </div>
                 </div>
               </li>
             {% else %}
               <li class="masthead__menu-item">
                 <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+                <span class="menusep"></span>
               </li>
             {% endif %}
           {% endfor %}
         </ul>
         {% if site.search == true %}
-        <button class="search__toggle" type="button" style="padding-bottom: 0.5em;">
+        <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
-        <button class="greedy-nav__toggle hidden" type="button" style="padding-bottom: 0.5em;">
+        <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
         </button>

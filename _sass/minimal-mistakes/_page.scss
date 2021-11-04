@@ -37,14 +37,17 @@ body {
 }
 
 .page {
+  margin:auto;
+  max-width: $mast-max-width;
   @include breakpoint($large) {
-    float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
+//    float: right;
+//    width: calc(100% - #{$right-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
   }
 
   @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
+ //   width: calc(100% - #{$right-sidebar-width});
+
     padding-right: $right-sidebar-width;
   }
 
@@ -172,21 +175,27 @@ body {
   -webkit-animation-delay: 0.25s;
   animation-delay: 0.25s;
 
+  &-wrap{
+    border-bottom: 1px solid $border-color;
+  }
+
   &--overlay {
     position: relative;
     margin-bottom: 2em;
     @include clearfix;
     height: auto;
     min-height: 2em;
+    max-width: $mast-max-width; //added
+    margin: auto; //added
     background-repeat: no-repeat;
     background-position: center;
-    background-color: mix(#fff, $background-color, 2%);
+ //   background-color: mix(#fff, $background-color, 2%);
     background-size: cover;
     -webkit-animation: $intro-transition;
     animation: $intro-transition;
     -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
-    border-bottom: 1px solid $border-color;
+ //   border-bottom: 1px solid $border-color;
 
     a {
       color: #fff;
@@ -196,7 +205,7 @@ body {
       padding: 1em;
       background-color: mix(#000000, transparent, 40%);
       @include breakpoint($small) {
-        background-color: mix(#000000, transparent, 40%);
+        background-color: transparent;
       }
       @include breakpoint($x-large) {
         max-width: $x-large;

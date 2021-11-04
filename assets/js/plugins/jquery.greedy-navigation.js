@@ -102,7 +102,7 @@ $(function() {
     $hlinks.toggleClass('hidden');
     $blind.toggleClass('close');
     menuHelper('toggle')
- //   $(this).toggleClass('close');
+    $(this).toggleClass('close');
     clearTimeout(timer);
   });
 

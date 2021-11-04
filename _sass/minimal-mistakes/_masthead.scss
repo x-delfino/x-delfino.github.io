@@ -26,10 +26,11 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    font-family: $sans-serif-narrow;
+  //  font-family: $sans-serif-narrow;
+    max-width: $mast-max-width;
 
     @include breakpoint($x-large) {
-      max-width: $mast-max-width;
+   //   max-width: $mast-max-width;
       $masthead-background-color: $background-color !default;
 
     }
