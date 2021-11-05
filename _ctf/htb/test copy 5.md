@@ -1,9 +1,8 @@
 ---
-title:  "test"
+title:  "btestinfolderbutnotcat"
 imgdir: test
 excerpt: "here are multiple normal length wordshere are multiple normal length words"
-category: htb
-
+tag: testtag2
 ---
 {% comment %}
 {%include post-image name="main.png" caption="test caption" %}

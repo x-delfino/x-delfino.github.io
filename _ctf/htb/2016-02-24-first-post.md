@@ -1,7 +1,10 @@
 ---
-title:  "ctf"
+title:  "actf2"
+imgdir: test
 layout: "splash"
 classes: "wide"
+category: cat
+excerpt: ' '
 ---
 
 

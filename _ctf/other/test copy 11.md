@@ -2,7 +2,6 @@
 title:  "test"
 imgdir: test
 excerpt: "here are multiple normal length wordshere are multiple normal length words"
-category: htb
 
 ---
 {% comment %}

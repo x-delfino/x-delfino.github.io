@@ -1,9 +1,8 @@
 ---
-title:  "test"
+title:  "ctest2_infolder"
 imgdir: test
-excerpt: "here are multiple normal length wordshere are multiple normal length words"
 category: htb
-
+tag: testtag1
 ---
 {% comment %}
 {%include post-image name="main.png" caption="test caption" %}

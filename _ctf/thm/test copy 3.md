@@ -1,8 +1,8 @@
 ---
-title:  "test"
+title:  "testin"
 imgdir: test
 excerpt: "here are multiple normal length wordshere are multiple normal length words"
-category: htb
+category: thm
 
 ---
 {% comment %}

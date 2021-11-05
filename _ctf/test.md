@@ -1,19 +1,22 @@
 ---
-title:  "test"
+title:  "test2"
 imgdir: test
-excerpt: "here are multiple normal length wordshere are multiple normal length words"
+excerpt:
 category: htb
+tags: test
+date: 2021-11-05
 ctf_meta:
   designer: test 
   designer_url: https://google.com
   platform: "HackTheBox"
   url: https://hackthebox.com/
-  difficulty: 1
+  rating: 4
 ---
 {% comment %}
 {%include post-image name="main.png" caption="test caption" %}
 {% endcomment %}
 
+{% include video id="PvcGccHOAwc" provider="youtube" %}
 
 My favorite search engine is [Duck Duck Go](https://duckduckgo.com).
 
