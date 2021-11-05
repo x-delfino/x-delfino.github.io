@@ -366,7 +366,7 @@
         // align for menu and remove underglow
         a{
           margin: 0px;
-          font-size: $type-size-6;
+          font-size: $type-size-5-5;
           &:before{
               content: none;
           }
@@ -444,6 +444,7 @@
       //position parent url 
 
         &-url {
+          flex-grow: 1;
           padding-left: inherit; 
           padding-right: 0;
           display:inline-block;
@@ -495,7 +496,6 @@
       &-toggle{
         @include clearfix;
         display: flex;
-        flex-grow: 1;
         justify-content: flex-end;
         position: relative;
         vertical-align: middle;

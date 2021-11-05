@@ -317,6 +317,13 @@ defaults:
       entries_layout: grid
 
 
+  # _pages/collections
+  - scope:
+      path: "_pages/collections"
+    values:
+      layout: collection
+      entries_layout: grid
+
 
   # _ctf_writeups
   - scope:
