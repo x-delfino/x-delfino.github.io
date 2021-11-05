@@ -16,13 +16,13 @@
             {% if sublinks %}
               {% assign menu_id = entry.title | prepend: 'menu_' | slugify %}
               {% assign toggle_id = entry.title | prepend: 'toggle_' | slugify %}
-              <li class="masthead__menu-item parent">
+              <li class="masthead__menu-item parent" onmouseenter="menuHelper('{{menu_id}}','hover')" onmouseleave="menuHelper('{{menu_id}}','hover')">
                 <div class="dropdown" id="{{menu_id}}">
                   <div class="dropdown-header" >
                     <a class="dropdown-header-url" href="{{ site.baseurl }}{{ entry.url }}">
                       {{ entry.title }}
                     </a>
-                    <div class="toggle_compressed dropdown-toggle">
+                    <div class="toggle_compressed dropdown-toggle" onclick="menuHelper('{{ menu_id }}')">
                     </div>
                     <span class="menusep"></span>
                   </div>

@@ -4,6 +4,26 @@ layout: archive
 
 {{ content }}
 
+
+{% assign mainNav = site.data.main_nav %}
+{% assign collectionRef = mainNav | where: "collectionname", page.collection | first %}
+{% assign sublinks = collectionRef.sublinks %}
+{% if sublinks %}
+  <div class="collection-sublinks">
+    <h3 class="collection-sublinks-title">Categories:</h3> 
+    <ul class="collection-sublinks-urls">
+      {% for sublink in sublinks %}
+      <li class="collection-sublinks-url">
+        <a href="{{ sublink.url | relative_url }}">{{ sublink.prettyname }}</a>
+        <span class="sublink-sep"></span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+
+<h3 class="collection-posts-title">All posts:</h3> 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% include documents-collection.html collection=page.collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}

@@ -1,9 +1,12 @@
-{% if site.tag_archive.type and page.tags[0] %}
+{% assign document = post | default: page %}
+
+
+{% if site.tag_archive.type and document.tags[0] %}
   {% include tag-list.html %}
 {% endif %}
 
-{% if page.meta.showcategory %}
-  {% if site.category_archive.type and page.categories[0] %}
+{% if documnent.meta.showcategory %}
+  {% if site.category_archive.type and document.categories[0] %}
     {% include category-list.html %}
   {% endif %}
 {% endif %}

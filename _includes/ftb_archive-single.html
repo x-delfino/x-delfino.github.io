@@ -25,6 +25,10 @@
       {% endif %}
     </h2>
     {% include page__meta.html type=include.type %}
+    {% if post.collection == 'ctf'%}
+      {% include page__ctf_meta.html %}
+    {% endif %}
+    {% include page__taxonomy.html %}
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
     <section class="page__meta">
       {% if site.data.ui-text[site.locale].meta_label %}

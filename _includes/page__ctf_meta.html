@@ -1,15 +1,40 @@
 
-<p class="page__ctf_platform"><strong><i class="fas fa-fw fa-network-wired"></i> Platform: </strong><a href={{ page.ctf_meta.url }}>{{ page.ctf_meta.platform }}</a></p>
-<p class="page__ctf_creator"><strong><i class="fas fa-fw fa-palette"></i> Creator: </strong><a href={{ page.ctf_meta.designer_url }}>{{ page.ctf_meta.designer }}</a></p>
+{%- comment -%}changed the page to post {%- endcomment -%}
+{% assign document = post | default: page %}
+{% assign mainNav = site.data.main_nav %}
 
-{% assign star-off = page.ctf_meta.maxrating | minus: page.ctf_meta.rating%}
+{% assign ctfCollection = mainNav | where: "title", "CTF Writeups" | first %}
 
-<div class="page__ctf_star">
-<p class="page__ctf_star-title"><strong><i class="fas fa-fw fa-tachometer-alt"></i> Difficulty: </strong></p>
-    {% for i in (1..page.ctf_meta.rating) %}
+
+
+{% assign docCategory = document.categories | first %}
+{% assign platform = ctfCollection.sublinks | where: "categoryname", docCategory | first %}
+
+
+
+<div class="page__ctf_meta">
+  <div class="page__ctf_platform">
+    <i class="fas fa-fw fa-network-wired"></i>
+    <p class="page__ctf_meta_title"><strong>Platform: </strong></p>
+    <a href={{ document.ctf_meta.url }}>{{ platform.prettyname | default: 'Unknown' }}</a>
+  </div>
+
+  <div class="page__ctf_creator">
+    <i class="fas fa-fw fa-palette"></i>
+    <p class="page__ctf_meta_title"><strong>Creator: </strong></p>
+    <a href={{ document.ctf_meta.designer_url }}>{{ document.ctf_meta.designer }}</a>
+  </div>
+  
+  {% assign star-off = document.ctf_meta.maxrating | minus: document.ctf_meta.rating%}
+  
+  <div class="page__ctf_star">
+    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <p class="page__ctf_meta_title"><strong>Difficulty: </strong></p>
+    {% for i in (1..document.ctf_meta.rating) %}
       <div class="page__ctf_star-on fa-fw fas"></div>
     {% endfor %}
     {% for i in (1..star-off) %}
       <div class="page__ctf_star-off fa-fw far"></div>
     {% endfor %}
-</div> 
+  </div> 
+</div>

@@ -2,24 +2,42 @@
   url: /test/
 
 - title: CTF Writeups
+  collectionname: ctf
   prettyname: "Capture the Flag"
   url: /ctf/
   sublinks:
     - title: "HackTheBox"
       prettyname: "Hack the Box"
       url: /ctf/htb/
+      categoryname: htb
 
     - title: "PG Play"
       prettyname: "Proving Grounds"
       url: /ctf/pgp/
+      categoryname: pgp
+
 
     - title: "TryHackMe"
       prettyname: "Try Hack Me"
       url: /ctf/thm/
+      categoryname: thm
+
       
     - title: "Other"
       prettyname: "Other"
       url: /ctf/other/
+      categoryname: other
+
+          
+    - title: "Other2"
+      prettyname: "Other2"
+      url: /ctf/other/
+      categoryname: other2
+
+    - title: "Other3"
+      prettyname: "Other3"
+      url: /ctf/other/
+      categoryname: other3
 
 - title: Articles
   url: /group/

@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+{% assign maxPost = 4 %}
+{% assign mainNav = site.data.main_nav %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+  {% for collection in site.collections %}
+    <div class="archive">
+      {% assign collection_name = collection.label %}
+      {% case collection_name %}
+        {% when 'posts' %}
+          {% assign displayName = 'blog' %}
+        {% when 'tags' %}
+          {% break %}
+        {% else %}
+          {% assign navRef = mainNav| where:"collectionname",collection_name | first %}
+          {% assign displayName = navRef.prettyname | default: collection_name %}
+      {% endcase %}
+      <h2 class="archive-collection-title">Recent {{displayName}} posts</h2>
+      <div class="entries-grid">
+        {% assign i = 0 %}
+        {% assign collection_items = site[collection_name] | sort: "date" | reverse %}
+        {% for post in collection_items %}
+          {% assign counter = counter | plus: 1 %}
+          {% include ftb_archive-single.html type="grid"%}
+          {% if counter == maxPost %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+
+

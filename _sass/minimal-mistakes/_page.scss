@@ -177,6 +177,7 @@ body {
 
   &-wrap{
     border-bottom: 1px solid $border-color;
+    box-shadow: inset 0px 0px 20px 15px mix(#000, transparent, 30%);
   }
 
   &--overlay {
@@ -195,6 +196,7 @@ body {
     animation: $intro-transition;
     -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
+    z-index: -1;
  //   border-bottom: 1px solid $border-color;
 
     a {
@@ -203,12 +205,12 @@ body {
 
     .wrapper {
       padding: 1em;
-      background-color: mix(#000000, transparent, 40%);
-      @include breakpoint($small) {
-        background-color: transparent;
-      }
+    //  border-right: 1px solid mix($background-color, transparent, 70%);
+      background-color: mix($background-color, transparent, 70%);
+      box-shadow: 0px 0px 10px 20px mix($background-color, transparent, 70%);
+
       @include breakpoint($x-large) {
-        max-width: $x-large;
+        max-width: $mast-max-width;
       }
     }
 
@@ -236,30 +238,6 @@ body {
 
       @include breakpoint($small) {
         font-size: $type-size-1;
-      }
-    }
-//added
-    .page__ctf_star {
-      margin: 0.2em;
-      &-title{
-        display:inline-block;
-        margin: unset;
-      }
-      &-on{
-        display:inline-block;
-        &:before{
-          content: "\f005";
-          font-family: "Font Awesome 5 Free";
-          font-weight:900;
-        }  
-      }
-      &-off{
-        display:inline-block;
-        &:before{
-          content: "\f005";
-          font-family: "Font Awesome 5 Free";
-          font-weight:400;
-        }
       }
     }
   }
@@ -382,9 +360,9 @@ body {
     display: none;
   }
 
-  strong {
-    margin-right: 10px;
-  }
+/*  strong {
+    margin-right: 0.5em;
+  }*/
 }
 
 .page__taxonomy-item {
@@ -394,11 +372,15 @@ body {
   text-decoration: none;
   border: 1px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
+  background-color: mix($primary-color, transparent, 70);
 
   &:hover {
     text-decoration: none;
     color: $link-color-hover;
-  }
+  } 
+  &:visited {
+    color: $link-color;
+  }  
 }
 
 .taxonomy__section {
@@ -624,3 +606,41 @@ body {
     }
   }
 }
+
+
+
+
+
+.page__ctf{
+  &_platform, &_creator, &_star{
+    margin: 0.2em;
+  }
+}
+
+.page__ctf_star {
+  &-title{
+    display:inline-block;
+    margin: unset;
+  }
+  &-on{
+    display:inline-block;
+    &:before{
+      content: "\f005";
+      font-family: "Font Awesome 5 Free";
+      font-weight:900;
+    }  
+  }
+  &-off{
+    display:inline-block;
+    &:before{
+      content: "\f005";
+      font-family: "Font Awesome 5 Free";
+      font-weight:400;
+    }
+  }
+}
+
+.page__ctf_meta_title{
+  display: inline;
+}
+

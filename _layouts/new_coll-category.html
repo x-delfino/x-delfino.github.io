@@ -3,10 +3,10 @@ layout: archive
 ---
 
 {{ content }}
-
+{% assign entries_sort = page.sort_by | default: 'title' %}
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
-  {% include new_documents-collection.html collection=page.collection taxonomy=page.taxonomy sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
+  {% include new_documents-collection.html collection=page.collection taxonomy=page.taxonomy sort_by=entries_sort sort_order=page.sort_order type=entries_layout %}
 </div>
 
 

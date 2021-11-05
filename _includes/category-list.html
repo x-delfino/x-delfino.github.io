@@ -1,4 +1,7 @@
-{% if page.collection == 'posts' %}
+{% assign document = post | default: page %}
+
+
+{% if document.collection == 'posts' %}
   {% case site.category_archive.type %}
     {% when "liquid" %}
       {% assign path_type = "#" %}
@@ -7,14 +10,14 @@
   {% endcase %}
 {% endif %}
 
-{% if page.collection == 'posts' %}
+{% if document.collection == 'posts' %}
   {% assign category_path = site.category_archive.path %}
-{% elsif page.page.coll_slug != blank%}
-  {% assign category_path = page.coll_slug %}
+{% elsif document.page.coll_slug != blank%}
+  {% assign category_path = document.coll_slug %}
 {% endif %}
 
 {% if category_path %}
-  {% assign categories_sorted = page.categories | sort_natural %}
+  {% assign categories_sorted = document.categories | sort_natural %}
 
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }} </strong>
