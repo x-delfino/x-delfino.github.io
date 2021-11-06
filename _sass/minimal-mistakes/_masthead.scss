@@ -13,6 +13,7 @@
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
   z-index: 20;
+  box-shadow: 0 0 20px 1px mix(black, transparent, 50%);
 
   &__inner-wrap {
     @include clearfix;

@@ -175,14 +175,9 @@ body {
   -webkit-animation-delay: 0.25s;
   animation-delay: 0.25s;
 
-  &-wrap{
-    border-bottom: 1px solid $border-color;
-    box-shadow: inset 0px 0px 20px 15px mix(#000, transparent, 30%);
-  }
 
   &--overlay {
     position: relative;
-    margin-bottom: 2em;
     @include clearfix;
     height: auto;
     min-height: 2em;
@@ -196,7 +191,6 @@ body {
     animation: $intro-transition;
     -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
-    z-index: -1;
  //   border-bottom: 1px solid $border-color;
 
     a {
@@ -211,6 +205,9 @@ body {
 
       @include breakpoint($x-large) {
         max-width: $mast-max-width;
+      }
+      p{
+        margin: 0.2em;
       }
     }
 
@@ -610,37 +607,42 @@ body {
 
 
 
+//added
 
-.page__ctf{
-  &_platform, &_creator, &_star{
+.page{
+  &__taxonomy,&__date{
     margin: 0.2em;
   }
-}
-
-.page__ctf_star {
-  &-title{
-    display:inline-block;
-    margin: unset;
-  }
-  &-on{
-    display:inline-block;
-    &:before{
-      content: "\f005";
-      font-family: "Font Awesome 5 Free";
-      font-weight:900;
-    }  
-  }
-  &-off{
-    display:inline-block;
-    &:before{
-      content: "\f005";
-      font-family: "Font Awesome 5 Free";
-      font-weight:400;
+  &__ctf{
+    &_platform, &_creator, &_star{
+      margin: 0.2em;
+    }
+    &_star{
+      &-title{
+        display:inline-block;
+        margin: unset;
+      }
+      &-on{
+        display:inline-block;
+        &:before{
+          content: "\f005";
+          font-family: "Font Awesome 5 Free";
+          font-weight:900;
+        }  
+      }
+      &-off{
+        display:inline-block;
+        &:before{
+          content: "\f005";
+          font-family: "Font Awesome 5 Free";
+          font-weight:400;
+        }
+      }
+    }
+    &_meta_title{
+      display: inline;
     }
   }
 }
 
-.page__ctf_meta_title{
-  display: inline;
-}
 

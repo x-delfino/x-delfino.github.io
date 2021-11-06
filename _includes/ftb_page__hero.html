@@ -1,5 +1,4 @@
-{% capture overlay_img_path %}{{ page.collection | append: "/" | append: page.imgdir | append: "/" | append: page.header.overlay_image | prepend: site.post_img_dir | relative_url }}{% endcapture %}
-
+{% capture overlay_img_path %}{{ page.collection | append: "/" | append: page.categories[0] | append: "/" | append: page.imgdir | append: "/" | append: page.header.overlay_image | prepend: site.post_img_dir | relative_url }}{% endcapture %}
 {% if page.header.overlay_filter contains "gradient" %}
   {% capture overlay_filter %}{{ page.header.overlay_filter }}{% endcapture %}
 {% elsif page.header.overlay_filter contains "rgba" %}
@@ -35,14 +34,12 @@
           <p class="page__lead">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
         {% endif %}
         {% include page__meta.html %}
-        <section class="page__meta">
           {% if site.data.ui-text[site.locale].meta_label %}
             <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
           {% endif %}
           {% include page__taxonomy.html %}
           {% include page__date.html %}
           {% include page__ctf_meta.html %}
-        </section>
         {% if page.header.cta_url %}
           <p><a href="{{ page.header.cta_url | relative_url }}" class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
         {% endif %}

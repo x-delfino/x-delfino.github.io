@@ -11,16 +11,24 @@
   background-color: $background-color;
   margin: 0 auto;
   max-width: 100%;
-  padding-left: 1em;
-  padding-right: 1em;
+  //padding-left: 1em;
+  //padding-right: 1em;
   font-family: $sans-serif;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
+  padding-right: 0px;
+  text-align: left;
+  border-top: 1px solid $border-color;
+  width: 100%;
+
 
   @include breakpoint($x-large) {
-    max-width: $x-large;
+   // max-width: $x-large;
+   padding-right: calc(2 * #{$right-sidebar-width});
+   text-align: center;
+
   }
 
   ol {

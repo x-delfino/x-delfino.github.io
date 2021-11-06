@@ -52,22 +52,8 @@ if(!(is_touch_enabled())){
     }
   })
 }
-  /*
-  $ddparent.mouseover(function(){
-    if($(this).closest('.visible-links')[0]){
-      var $thisdropdown = $(this).find('.dropdown');
-      $('.dropdown').not($thisdropdown).removeClass('dd_expanded');  // close other dropdowns
-      closeGreedy();
-      $thisdropdown.addClass('dd_expanded'); // open this menu
-    }
-  })
-  $ddparent.mouseout(function(){
-      if($(this).closest('.visible-links')[0]){
-          var $thisdropdown = $(this).find('.dropdown');
-          $thisdropdown.removeClass('dd_expanded'); // close this menu
-      }
-  })*/
   $(window).click(function(e){
+    console.log(e.target)
    if (!(e.target.closest('.hidden-links, .dropdown, .greedy-nav__toggle'))){
       closeGreedy();
       $dropdown.removeClass('dd_expanded');  // close all dropdowns
