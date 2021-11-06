@@ -12,7 +12,7 @@ ctf_meta:
 
 # Enumeration
 
-Kicking straight off Jumping straight into it, we kick off a scan with rustscan on the target host with `rustscan -a $targetip -- -A -sC`. (rustscan runs quite a bit faster that nmap for the initial scan and can pipe results into nmap for further enumeration. You can find it [here](https://github.com/RustScan/RustScan)).
+Jumping straight into it, we kick off a scan with rustscan on the target host with `rustscan -a $targetip -- -A -sC`. (rustscan runs quite a bit faster that nmap for the initial scan and can pipe results into nmap for further enumeration. You can find it [here](https://github.com/RustScan/RustScan)).
 
 {% include post-image name="nmap.png" caption="initial nmap scan" %}
 
