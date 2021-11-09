@@ -5,11 +5,12 @@
 .page__footer {
   @include clearfix;
   position:absolute;
-  bottom:0;
+  bottom: 0;
+//  bottom: -7em;
   border-top: 1px solid $border-color;
   float: left;
-  margin-left: 0;
-  margin-right: 0;
+ // margin-left: 0;
+//  margin-right: 0;
   width: 100%;
   margin-top: 3em;
   color: $muted-text-color;
@@ -18,7 +19,7 @@
   -webkit-animation-delay: 0.45s;
   animation-delay: 0.45s;
   background-color: $footer-background-color;
-  z-index: 20;
+//  z-index: 20;
 
   footer {
     @include clearfix;

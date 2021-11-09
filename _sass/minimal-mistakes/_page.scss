@@ -8,6 +8,7 @@
   margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
+  padding-bottom: 8em;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   max-width: 100%;
@@ -34,6 +35,10 @@ body {
 .search-content {
   flex: 1 0 auto;
   
+}
+
+.initial-content{
+  position: relative;
 }
 
 .page {
@@ -70,6 +75,9 @@ body {
       clear: both;
     }
   }
+  &.cheatsheet{
+    padding-right: 0;
+  }
 }
 
 .page__title {
@@ -92,12 +100,16 @@ body {
 }
 
 .page__content {
-  h2 {
+  h1, h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
   }
 
 	h1, h2, h3, h4, h5, h6 {
+    padding-top: 2em; /* fix anchors linking to behind header*/
+    margin-top: -2em;
+    scroll-margin-top: 100px;
+    scroll-margin: 100px 0 0 0;
 		.header-link {
 			position: relative;
 			left: 0.5em;

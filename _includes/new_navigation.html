@@ -10,7 +10,7 @@
         <a class="site-title" href="{{ '/' | relative_url }}">
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
-        <ul class="visible-links" style="align-self:stretch">
+        <ul class="visible-links" style="align-self: stretch;">
           {% for entry in site.data.main_nav %}
             {% assign sublinks = entry.sublinks %}
             {% if sublinks %}
@@ -18,7 +18,7 @@
               {% assign toggle_id = entry.title | prepend: 'toggle_' | slugify %}
               <li class="masthead__menu-item parent">
                 <div class="dropdown" id="{{menu_id}}">
-                  <div class="dropdown-header" >
+                  <div class="dropdown-header" style="top:calc(50% - 1em)">
                     <a class="dropdown-header-url" href="{{ site.baseurl }}{{ entry.url }}">
                       {{ entry.title }}
                     </a>

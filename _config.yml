@@ -285,7 +285,12 @@ collections:
   ctf:
     output: true
     permalink: /:collection/:path
-
+  cheatsheets:
+    output: true
+    permalink: /:collection/:path
+  articles:
+    output: true
+    permalink: /:collection/:path
 
 # Defaults
 defaults:
@@ -325,7 +330,14 @@ defaults:
       entries_layout: grid
 
 
-  # _ctf_writeups
+  # _pages/categories:
+  - scope:
+      path: "_pages/categories"
+    values:
+      layout: new_coll-category
+      entries_layout: grid
+
+  # _ctf
   - scope:
       path: ""
       type: ctf
@@ -343,7 +355,30 @@ defaults:
       ctf_meta:
         maxrating: 5
 
+  ##_articles
+  - scope:
+      path: ""
+      type: articles
+    values:
+      author_profile: false
+      layout: ftb_ctf
+      toc: true
+      toc_sticky: true
+      permalink: /articles/:categories/:title/
 
+  ## _cheatsheets
+  - scope:
+      path: ""
+      type: cheatsheets
+    values:
+      author_profile: false
+      layout: ftb_cheatsheet
+      toc: false
+      toc_sticky: false
+      permalink: /cheatsheets/:categories/:title/
+
+
+### CTF default for categories
   - scope:
       path: "_ctf/htb"
     values:
@@ -363,3 +398,12 @@ defaults:
       path: "_ctf/other"
     values:
       category: "other"
+
+
+## cheatsheet defaults for categories
+
+  - scope:
+      path: "_cheatsheets/db"
+    values:
+      category: "db"
+      
