@@ -10,7 +10,7 @@
   @include clearfix;
   background-color: $background-color;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: $mast-max-width;
   //padding-left: 1em;
   //padding-right: 1em;
   font-family: $sans-serif;
@@ -22,19 +22,21 @@
   text-align: left;
   border-top: 1px solid $border-color;
   width: 100%;
+  padding-left: 1em;
 
 
   @include breakpoint($x-large) {
    // max-width: $x-large;
-   padding-right: calc(2 * #{$right-sidebar-width});
-   text-align: center;
+ //  padding-right: calc(2 * #{$right-sidebar-width});
+ //  text-align: center;
+ //  padding-left: 0;
 
   }
 
   ol {
     padding: 0;
     list-style: none;
-    font-size: $type-size-6;
+    font-size: $type-size-5;
 
     @include breakpoint($large) {
       float: left;
@@ -248,6 +250,7 @@
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    align-self: stretch;
   //  overflow: hidden;
 
 
@@ -342,22 +345,7 @@
       }
       &-content{
         border-radius: 0 0 $border-radius $border-radius;
-        /*
-        &:before {
-          position: absolute;
-          width: 0.5em;
-          height: 0.5em;
-          border-top: 1px solid $border-color;
-          border-left: 1px solid $border-color;
-          content: "";
-          bottom: 100%;
-          left: 30%;
-          margin-bottom: -0.25em;
-          transform: rotate(45deg);
-          border-radius: 2px 1px 1px 1px;
-          background: $masthead-background-color;
-          }
-        */
+        top: 100%;
       }
       &-item{
         border-bottom: 1px solid $border-color;
@@ -703,6 +691,7 @@
   // set header border (can probably move some of this to just the hidden
   &-header {
     margin: inherit;
+    top:calc(50% - 1em);
 //    margin-left: 1em;
     border-left: 1em solid $masthead-background-color;
     position: relative;
@@ -936,6 +925,8 @@
     background: $primary-color;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
+    padding-top: 0.5em; 
+    margin-top: 0;
   }
 
   // Scrollspy marks toc items as .active when they are in focus

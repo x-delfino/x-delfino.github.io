@@ -1,16 +1,16 @@
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 
 <div class="masthead">
-  <div class="masthead__inner-wrap" style="padding-bottom: 0;">
+  <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}" style="padding-bottom:0.5em"></a>
+          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
-        <ul class="visible-links" style="align-self: stretch;">
+        <ul class="visible-links">
           {% for entry in site.data.main_nav %}
             {% assign sublinks = entry.sublinks %}
             {% if sublinks %}
@@ -18,7 +18,7 @@
               {% assign toggle_id = entry.title | prepend: 'toggle_' | slugify %}
               <li class="masthead__menu-item parent">
                 <div class="dropdown" id="{{menu_id}}">
-                  <div class="dropdown-header" style="top:calc(50% - 1em)">
+                  <div class="dropdown-header">
                     <a class="dropdown-header-url" href="{{ site.baseurl }}{{ entry.url }}">
                       {{ entry.title }}
                     </a>
@@ -27,7 +27,7 @@
                     <span class="menusep"></span>
                   </div>
                   <div class="dropdown-content-wrapper">
-                    <ul class="dropdown-content" style="top:100%">
+                    <ul class="dropdown-content">
                     {% for sublink in sublinks %}
                       <li class="dropdown-item">
                         <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
@@ -65,41 +65,3 @@
 </div>
 
 
-{% comment %}
-
-
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
-        {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}">
-          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
-        </a>
-        <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
-              <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
-        </ul>
-        {% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
-        </button>
-        {% endif %}
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-{% endcomment %}

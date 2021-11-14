@@ -38,3 +38,13 @@ td,
 th {
   vertical-align: middle;
 }
+
+.cheatsheet{
+  table{
+    h2, h3{
+      border-bottom: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

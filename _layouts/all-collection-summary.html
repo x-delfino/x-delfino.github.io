@@ -8,6 +8,9 @@ layout: default
 <div id="main" role="main">
   <br>
   {% include sidebar.html %}
+  <section class="page__content coll_summary" itemprop="text">
+    {{ content }}
+  </section>
   {% for collection in site.collections %}
     <div class="archive">
       {% assign collection_name = collection.label %}

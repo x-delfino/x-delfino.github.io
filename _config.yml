@@ -348,6 +348,7 @@ defaults:
       toc_sticky: true
       permalink: /ctf/:categories/:title/
       coll_slug: /ctf/
+      excerpt: ""
       header:
         overlay_image: main.png
         teaser: teaser.png
@@ -365,6 +366,9 @@ defaults:
       toc: true
       toc_sticky: true
       permalink: /articles/:categories/:title/
+      coll_slug: /articles/
+      meta:
+        showcategory: true
 
   ## _cheatsheets
   - scope:
@@ -373,7 +377,7 @@ defaults:
     values:
       author_profile: false
       layout: ftb_cheatsheet
-      toc: false
+      toc: true
       toc_sticky: false
       permalink: /cheatsheets/:categories/:title/
 

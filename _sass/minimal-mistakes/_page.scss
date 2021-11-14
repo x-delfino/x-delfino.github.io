@@ -92,6 +92,9 @@ body {
   & + .page__meta {
     margin-top: -0.5em;
   }
+  &:before{
+    content: none;
+  }
 }
 
 .page__lead {
@@ -105,11 +108,22 @@ body {
     border-bottom: 1px solid $border-color;
   }
 
+  h2{
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid mix($border-color,$background-color, 70%);
+  }
+
+  h3{
+    padding-bottom: 0.5em;
+   // border-bottom: 1px solid mix($border-color,$background-color, 35%);
+  }
+
 	h1, h2, h3, h4, h5, h6 {
-    padding-top: 2em; /* fix anchors linking to behind header*/
-    margin-top: -2em;
-    scroll-margin-top: 100px;
-    scroll-margin: 100px 0 0 0;
+  //  padding-top: 2em; /* fix anchors linking to behind header*/
+  //  margin-top: -2em;
+    // scroll-margin-top: 3em;
+   //  scroll-padding-top: 3em;
+  //  scroll-margin: 250px 0 0 0;
 		.header-link {
 			position: relative;
 			left: 0.5em;
@@ -176,6 +190,11 @@ body {
     margin-top: -1.5em;
     padding-left: 1.25rem;
   }
+  &.coll_summary{
+    max-width: $mast-max-width;
+    margin: auto;
+    text-align: center;
+  }
 }
 
 .page__hero {
@@ -196,7 +215,11 @@ body {
     max-width: $mast-max-width; //added
     margin: auto; //added
     background-repeat: no-repeat;
-    background-position: center;
+ //   background-position-x: center;
+ //   background-position-y: -4em;
+ //   background-position: auto;
+  //  background-attachment: fixed;
+ //   background-size: auto 40%;
  //   background-color: mix(#fff, $background-color, 2%);
     background-size: cover;
     -webkit-animation: $intro-transition;
@@ -204,6 +227,9 @@ body {
     -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
  //   border-bottom: 1px solid $border-color;
+ //   @include breakpoint($small){
+ //     background-size: auto 40%;
+ //   }
 
     a {
       color: #fff;
@@ -212,8 +238,8 @@ body {
     .wrapper {
       padding: 1em;
     //  border-right: 1px solid mix($background-color, transparent, 70%);
-      background-color: mix($background-color, transparent, 70%);
-      box-shadow: 0px 0px 10px 20px mix($background-color, transparent, 70%);
+      background-color: mix($background-color, transparent, 80%);
+      box-shadow: 0px 0px 10px 20px mix($background-color, transparent, 80%);
 
       @include breakpoint($x-large) {
         max-width: $mast-max-width;
@@ -379,6 +405,7 @@ body {
   margin-right: 5px;
   padding: 0px 6px;
   text-decoration: none;
+  font-size: $type-size-5;
   border: 1px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
   background-color: mix($primary-color, transparent, 70);
@@ -635,6 +662,7 @@ body {
         margin: unset;
       }
       &-on{
+        font-size: 0.8em;
         display:inline-block;
         &:before{
           content: "\f005";
@@ -643,6 +671,7 @@ body {
         }  
       }
       &-off{
+        font-size: 0.8em;
         display:inline-block;
         &:before{
           content: "\f005";

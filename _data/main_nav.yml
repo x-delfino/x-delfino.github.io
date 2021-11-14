@@ -1,24 +1,41 @@
 - title: CTF Writeups
   collectionname: ctf
-  prettyname: "Capture the Flag"
+  prettyname: "CTF Writeups"
   url: /ctf/
   sublinks:
     - title: "HackTheBox"
       prettyname: "Hack the Box"
       url: /ctf/htb/
       categoryname: htb
-
     - title: "PG Play"
-      prettyname: "Proving Grounds"
+      prettyname: "Proving Grounds Play"
       url: /ctf/pgp/
       categoryname: pgp
-
-
     - title: "TryHackMe"
       prettyname: "Try Hack Me"
       url: /ctf/thm/
       categoryname: thm
 
+
+- title: Articles
+  collectionname: articles
+  prettyname: "Articles"
+  url: /articles/
+  sublinks:
+    - title: "OWASP 10"
+      prettyname: "OWASP Top 10"
+      url: /articles/owasp10/
+      categoryname: owasp10
+
+- title: Cheatsheets
+  collectionname: cheatsheets
+  prettyname: "Cheatsheet"
+  url: /cheatsheets/
+  sublinks:
+    - title: "Database"
+      prettyname: "Database"
+      url: /cheatsheets/db/
+      categoryname: db
 
 
 #- title: Articles
