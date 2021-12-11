@@ -410,4 +410,15 @@ defaults:
       path: "_cheatsheets/db"
     values:
       category: "db"
-      
+
+## Articles default categories
+
+  - scope:
+      path: "_articles/exploit-dev"
+    values:
+      category: "exploit-dev"
+
+  - scope:
+      path: "_articles/owasp10"
+    values:
+      category: "owasp10"

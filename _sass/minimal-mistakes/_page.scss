@@ -83,6 +83,8 @@ body {
 .page__title {
   margin-top: 0;
   line-height: 1;
+  border-bottom: 1px solid mix($primary-color,$border-color, 90%);
+  padding-bottom: 0.5em;
 
   a {
     color: $text-color;
@@ -105,12 +107,12 @@ body {
 .page__content {
   h1, h2 {
     padding-bottom: 0.5em;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid mix($primary-color,$border-color, 70%);
   }
 
   h2{
     padding-bottom: 0.5em;
-    border-bottom: 1px solid mix($border-color,$background-color, 70%);
+    border-bottom: 1px solid mix($primary-color,$border-color, 50%);
   }
 
   h3{

@@ -26,6 +26,10 @@
       prettyname: "OWASP Top 10"
       url: /articles/owasp10/
       categoryname: owasp10
+    - title: "Exploit Dev"
+      prettyname: "Exploit Development"
+      url: /articles/exploit-dev/
+      categoryname: exploit-dev
 
 - title: Cheatsheets
   collectionname: cheatsheets
