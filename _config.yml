@@ -148,6 +148,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCHJSAA64OsU4vAlMpUnaj1A"
 
 
 # Reading Files
