@@ -45,7 +45,7 @@ comments:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
   giscus:
-    repo_id              : "x-delfino/x-delfino.github.io" # Shown during giscus setup at https://giscus.app
+    repo_id              : "R_kgDOGVbeIg" # Shown during giscus setup at https://giscus.app
     category_name        : "Comments" # Full text name of the category
     category_id          : "DIC_kwDOGVbeIs4CAQ-G" # Shown during giscus setup at https://giscus.app
     discussion_term      : "pathname" # "pathname" (default), "url", "title", "og:title"
