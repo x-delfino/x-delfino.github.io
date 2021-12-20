@@ -72,7 +72,7 @@ Note: the segments enclosed in double carets (^^) need to be replaced with the i
 
 | Function | Command | Ref. |
 | --- | --- | --- |
-| Block Comment | `/*comment is here (can spread multiple lines)*/`{:.language-sql .highlight} | [MySQL](https://dev.mysql.com/doc/refman/8.0/en/comments.html) |
+| Block Comment | `/*comment is here (can spread multiple lines or be inline)*/`{:.language-sql .highlight} | [MySQL](https://dev.mysql.com/doc/refman/8.0/en/comments.html) |
 | Comment | `-- comment here, can go at end of line or it's own line`{:.language-sql .highlight} | [MySQL](https://dev.mysql.com/doc/refman/8.0/en/comments.html) |
 | Comment | `# comment here, can go at end of line or it's own line`{:.language-sql .highlight} | [MySQL](https://dev.mysql.com/doc/refman/8.0/en/comments.html) |
 | SELECT | `SELECT ^^column^^ FROM ^^table^^;`{:.language-sql .highlight}<br>eg.`SELECT username FROM users;`{:.language-sql .highlight}  | [MySQL](https://dev.mysql.com/doc/refman/8.0/en/select.html) |
