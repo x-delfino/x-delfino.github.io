@@ -7,8 +7,6 @@ date: 2021-11-06
 ---
 
 
-add where not in
-
 Note: the segments enclosed in double carets (^^) need to be replaced with the indicated value - examples have been provided where practical.
 {: .notice--info}
 
